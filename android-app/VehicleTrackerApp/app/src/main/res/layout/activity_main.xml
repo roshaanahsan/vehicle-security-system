@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Google Map filling everything except bottom buttons -->
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonPanel" />
+
+    <!-- Online/Offline Badge (on top over map) -->
+    <TextView
+        android:id="@+id/statusBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="6dp"
+        android:text="Checking..."
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_green_dark"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Bottom Buttons -->
+    <LinearLayout
+        android:id="@+id/buttonPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="#AA000000"
+        android:gravity="center"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/killSwitchBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Kill Switch: OFF"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/openMapsBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Open Maps"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/viewLogsBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Ignition Logs"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>
